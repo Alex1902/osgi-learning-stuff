@@ -1,11 +1,18 @@
 package de.kraft.osgi.helloworldprovider;
 
+import de.kraft.osgi.helloworldlogger.HelloWorldLoggerService;
+
 public class HelloWorldProvider implements HelloWorldService
 {
-//    Logger LOG = LoggerFactory.getLogger( de.kraft.osgi.helloworldprovider.HelloWorldProvider.class );
+    private final HelloWorldLoggerService logger;
+
+    public HelloWorldProvider( HelloWorldLoggerService logger )
+    {
+        this.logger = logger;
+    }
 
     public void helloWorld()
     {
-//        LOG.debug( "=== Hello World! ===" );
+        logger.debug( "=== Hello World! ===" );
     }
 }
