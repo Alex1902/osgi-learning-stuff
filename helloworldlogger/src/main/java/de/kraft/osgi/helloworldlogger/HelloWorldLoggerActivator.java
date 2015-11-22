@@ -13,6 +13,6 @@ public class HelloWorldLoggerActivator implements BundleActivator
 
     public void stop( final BundleContext bundleContext ) throws Exception
     {
-        System.out.println( "Starting Logger..." );
+        System.out.println( "Stopping Logger..." );
     }
 }
