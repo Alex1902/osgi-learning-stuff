@@ -7,31 +7,23 @@ import org.osgi.framework.ServiceReference;
 
 public class ProviderActivator implements BundleActivator
 {
-    HelloWorldLoggerService LOG;
+    private HelloWorldLoggerService logger;
 
     public void start( BundleContext bundleContext )
     {
-        LOG = getLogger( bundleContext );
-        log( "HelloWorldProvider is being started..." );
-//        log( "Registering HelloWorldService..." );
-        bundleContext.registerService( de.kraft.osgi.helloworldprovider.HelloWorldService.class.getName(),
-                new de.kraft.osgi.helloworldprovider.HelloWorldProvider(), null );
+        logger = getLogger( bundleContext );
+        logger.debug( "HelloWorldProvider is being started..." );
+        bundleContext.registerService( HelloWorldService.class.getName(), new HelloWorldProvider( logger ), null );
     }
 
     public void stop( BundleContext bundleContext )
     {
-        log( "HelloWorldProvider is being stopped..." );
+        logger.debug( "HelloWorldProvider is being stopped..." );
     }
 
     private HelloWorldLoggerService getLogger( BundleContext bundleContext )
     {
         ServiceReference ref = bundleContext.getServiceReference( HelloWorldLoggerService.class.getName() );
-        return ( HelloWorldLoggerService ) bundleContext.getService( ref );
-    }
-
-    private void log( String log )
-    {
-        LOG.debug( log );
-        System.out.println( log );
+        return (HelloWorldLoggerService) bundleContext.getService( ref );
     }
 }
