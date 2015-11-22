@@ -10,6 +10,25 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>helloworldprovider</artifactId>
+    <packaging>bundle</packaging>
 
+    <dependencies></dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>de.kraft.osgi.helloworldprovider</Export-Package>
+                        <Import-Package>*</Import-Package>
+                        <Bundle-Activator>de.kraft.osgi.helloworldprovider.ProviderActivator</Bundle-Activator>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -10,6 +10,32 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>helloworldconsumer</artifactId>
+    <packaging>bundle</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.kraft.osgi</groupId>
+            <artifactId>helloworldprovider</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>de.kraft.osgi.helloworldconsumer</Export-Package>
+                        <Bundle-Activator>de.kraft.osgi.helloworldconsumer.HelloWorldConsumer</Bundle-Activator>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
