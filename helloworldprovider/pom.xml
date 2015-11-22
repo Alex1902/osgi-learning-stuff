@@ -12,7 +12,13 @@
     <artifactId>helloworldprovider</artifactId>
     <packaging>bundle</packaging>
 
-    <dependencies></dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>de.kraft.osgi</groupId>
+            <artifactId>helloworldlogger</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
