@@ -29,7 +29,6 @@
                 <configuration>
                     <instructions>
                         <Export-Package>de.kraft.osgi.helloworldprovider</Export-Package>
-                        <Import-Package>*</Import-Package>
                         <Bundle-Activator>de.kraft.osgi.helloworldprovider.ProviderActivator</Bundle-Activator>
                     </instructions>
                 </configuration>
